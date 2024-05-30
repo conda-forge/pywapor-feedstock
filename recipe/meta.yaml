@@ -1,5 +1,5 @@
 {% set name = "pywapor" %}
-{% set version = "3.5.2" %}
+{% set version = "3.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
-  sha256: 3ebde1f0f3044145a815cc5cb887d020b1f84cd8f7a139b44d8219dc6b43e441
+  sha256: fb642729916968be44542e4a97105eccaafb0f8da69967f82b5085835defb9f3
 
 build:
   noarch: python
