@@ -1,13 +1,14 @@
 {% set name = "pywapor" %}
-{% set version = "3.5.11" %}
+{% set version = "3.5.12" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
-  sha256: 83942a7c8520630c297615eff1151d57fa8f93977b79b30dec45c1cde6738f3a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
+  sha256: f5eb74b09c8547dfb1b816cc5064a876617eec2fe91942d7a198e64f0a3543e4
 
 build:
   noarch: python
@@ -16,15 +17,16 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - netcdf4
-    - gdal
+    - gdal >=3,<4.0
     - xarray
-    - numpy
-    - pandas
+    - numpy <2
+    - pandas <3
     - requests
     - matplotlib-base
     - pyproj
@@ -37,10 +39,10 @@ requirements:
     - bottleneck
     - tqdm
     - dask-core
-    - rioxarray
+    - rioxarray >=0.15.5
     - cryptography
     - cachetools
-    - cdsapi
+    - cdsapi >=0.7.0
     - shapely
     - lxml
     - scikit-learn
@@ -48,6 +50,8 @@ requirements:
     - xmltodict
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pywapor
 
