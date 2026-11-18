@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
   sha256: 2e817afb6d9c6a1a2ad88b7317d6a0b2626cc8559df25ded917ff354ea449617
 
 build:
