@@ -1,6 +1,6 @@
 {% set name = "pywapor" %}
-{% set version = "3.7.4" %}
-{% set python_min = "3.10" %}
+{% set version = "3.7.6" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pywapor-{{ version }}.tar.gz
-  sha256: 62a47b8ece040c99259b425fab22e5a945fe1fc97fee46b32c89aabcf31715f9
+  sha256: 2e817afb6d9c6a1a2ad88b7317d6a0b2626cc8559df25ded917ff354ea449617
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - libgdal-jp2openjpeg
     - gdal >=3,<4.0
     - xarray
-    - numpy <2
+    - numpy
     - pandas <3
     - requests
     - matplotlib-base
